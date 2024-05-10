@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qr_app/home_screen.dart';
+import 'package:qr_app/constant/colors.dart';
+import 'package:qr_app/screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'QR App',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        scaffoldBackgroundColor: secColor,
+        appBarTheme: AppBarTheme(
+          backgroundColor: mainColor,
+          foregroundColor: textColor,
+        ),
       ),
       home: const HomeScreen(),
     );
